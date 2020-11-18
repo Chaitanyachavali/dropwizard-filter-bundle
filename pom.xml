@@ -6,7 +6,8 @@
 
   <groupId>com.chaitanyachavali.dropwizard</groupId>
   <artifactId>dropwizard-filters-bundle</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
 
   <properties>
     <dropwizard.version>1.3.27</dropwizard.version>
@@ -21,4 +22,35 @@
     </dependency>
   </dependencies>
 
+  <developers>
+    <developer>
+      <id>chaitanyachavali</id>
+      <name>Chaitanya Reddy</name>
+      <email>chavalichaithanyachinna@gmail.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://github.com/Chaitanyachavali/dropwizard-filter-bundle.git</connection>
+    <developerConnection>scm:git:https://github.com/Chaitanyachavali/dropwizard-filter-bundle.git</developerConnection>
+    <tag>HEAD</tag>
+    <url>https://github.com/Chaitanyachavali/dropwizard-filter-bundle.git</url>
+  </scm>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+
+  <distributionManagement>
+    <repository>
+      <id>clojars</id>
+      <name>Clojars repository</name>
+      <url>https://clojars.org/repo</url>
+    </repository>
+  </distributionManagement>
 </project>

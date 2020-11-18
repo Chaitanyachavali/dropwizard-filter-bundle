@@ -19,15 +19,21 @@ import com.chaitanyachavali.dropwizard.enums.FilterMode;
 import com.chaitanyachavali.dropwizard.features.ReadWriteDynamicFeature;
 import io.dropwizard.Configuration;
 import io.dropwizard.ConfiguredBundle;
+import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
 public abstract class ResourceFilterBundle<T extends Configuration> implements ConfiguredBundle<T> {
 
-  public abstract FilterMode withMode();
+  public abstract FilterMode withMode(T configuration);
 
   public void run(T configuration, Environment environment) {
-    FilterMode effectiveMode = withMode() == null ? FilterMode.READ_WRITE : withMode();
+    FilterMode effectiveMode = withMode(configuration) == null
+        ? FilterMode.READ_WRITE
+        : withMode(configuration);
     environment.jersey().register(new ReadWriteDynamicFeature(effectiveMode));
+  }
+
+  public void initialize(Bootstrap<?> bootstrap) {
   }
 
 }
